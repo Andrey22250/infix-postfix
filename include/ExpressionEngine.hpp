@@ -15,6 +15,11 @@ public:
 */
     std::string toPostfix(const std::string& expression);
 
+/**
+     * Вычисляет числовое значение выражения, записанного в постфиксной форме (ОПЗ).
+     * @param expression Строка в формате ОПЗ с пробелами в качестве разделителей.
+     * @return Результат вычисления выражения.
+*/
     double evaluate(const std::string& expression);
 };
 
