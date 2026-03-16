@@ -10,3 +10,8 @@ std::string ExpressionEngine::toPostfix(const std::string& expression) {
 
     return "1 2 +";
 }
+
+double ExpressionEngine::evaluate(const std::string& expression) {
+    // TODO: fully implement evaluate method
+    return 111.0;
+}

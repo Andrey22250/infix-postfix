@@ -14,6 +14,8 @@ public:
      * @return Строка в формате обратной польской записи, где токены разделены пробелами.
 */
     std::string toPostfix(const std::string& expression);
+
+    double evaluate(const std::string& expression);
 };
 
 #endif // EXPRESSION_ENGINE_HPP
