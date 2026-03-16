@@ -19,3 +19,8 @@ TEST_CASE("Вычисление простого выражения в ОПЗ", 
     ExpressionEngine engine;
     REQUIRE_THAT(engine.evaluate("42 69 +"), Catch::Matchers::WithinRel(111.0, 0.0001));
 }
+
+TEST_CASE("Вычисление сложного выражения в ОПЗ", "[ExpressionEngine]") {
+    ExpressionEngine engine;
+    REQUIRE_THAT(engine.evaluate("3 5 2 / -"), Catch::Matchers::WithinRel(0.5, 0.0001));
+}
