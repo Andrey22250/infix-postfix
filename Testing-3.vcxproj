@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\catch_amalgamated.cpp" />
+    <ClCompile Include="src\ExpressionEngine.cpp" />
     <ClCompile Include="src\Testing-3.cpp" />
     <ClCompile Include="Testing-3.cpp" />
     <ClCompile Include="tests\tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\catch_amalgamated.hpp" />
+    <ClInclude Include="include\ExpressionEngine.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
