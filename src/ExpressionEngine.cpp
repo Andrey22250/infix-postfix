@@ -67,10 +67,30 @@ std::string ExpressionEngine::toPostfix(const std::string& expression) {
 }
 
 double ExpressionEngine::evaluate(const std::string& expression) {
-    // TODO: fully implement evaluate method
-    if (expression == "3 5 2 / -") {
-        return 0.5;
+    std::stringstream ss(expression);
+    std::stack<double> values;
+    std::string token;
+
+    while (ss >> token) {
+        if (std::isdigit(token[0]) || (token.size() > 1 && token[0] == '-')) {
+            values.push(std::stod(token));
+        }
+        else {
+            if (values.size() < 2) throw std::runtime_error("Некорретное входное выражение");
+
+            double b = values.top(); values.pop();
+            double a = values.top(); values.pop();
+
+            if (token == "+") values.push(a + b);
+            else if (token == "-") values.push(a - b);
+            else if (token == "*") values.push(a * b);
+            else if (token == "/") {
+                if (b == 0) throw std::runtime_error("Деление на 0");
+                values.push(a / b);
+            }
+        }
     }
 
-    return 111.0;
+    if (values.size() != 1) throw std::runtime_error("Некорретное входное выражение");
+    return values.top();
 }
